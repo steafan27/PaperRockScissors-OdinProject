@@ -6,14 +6,14 @@ let loss = 0;
 let tie = 0;
 let gamePlayed = 0;
 
-while(gamePlayed < 4){
-    userInput = window.prompt().toLowerCase(); 
-    computerChoice = Math.floor(Math.random() * 3); 
-    playRound(computerChoice, userInput);
-    gamePlayed += 1;
-    console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
-}
-console.log("FINAL Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+//while(gamePlayed < 6)
+userInput = window.prompt().toLowerCase(); 
+computerChoice = Math.floor(Math.random() * 3); 
+playRound(computerChoice, userInput);
+gamePlayed += 1;
+console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+
+//console.log("FINAL Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
 
 function playRound(cI, uI){
     const CHOICES = ["paper", "rock", "scissors"];
