@@ -5,15 +5,30 @@ let wins = 0;
 let loss = 0;
 let tie = 0;
 let gamePlayed = 0;
+let rockButton = document.getElementById('buttonRock');
+let paperButton = document.getElementById('buttonPaper');
+let scissorButton = document.getElementById('buttonScissor');
 
-//while(gamePlayed < 6)
-userInput = window.prompt().toLowerCase(); 
-computerChoice = Math.floor(Math.random() * 3); 
-playRound(computerChoice, userInput);
-gamePlayed += 1;
-console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+rockButton.addEventListener('click', () =>{
+    userChoice = 'rock';
+    computerChoice = Math.floor(Math.random() * 3);
+    playRound(computerChoice, userChoice);
+    console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+});
 
-//console.log("FINAL Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+paperButton.addEventListener('click', () =>{
+    userChoice = 'paper';
+    computerChoice = Math.floor(Math.random() * 3);
+    playRound(computerChoice, userChoice);
+    console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+});
+
+scissorButton.addEventListener('click', () =>{
+    userChoice = 'scissors';
+    computerChoice = Math.floor(Math.random() * 3);
+    playRound(computerChoice, userChoice);
+    console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+});
 
 function playRound(cI, uI){
     const CHOICES = ["paper", "rock", "scissors"];
@@ -38,5 +53,3 @@ function playRound(cI, uI){
             return tie += 1;
     }
 }
-
-
