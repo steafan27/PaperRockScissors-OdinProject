@@ -8,18 +8,22 @@ let gamePlayed = 0;
 let rockButton = document.getElementById('buttonRock');
 let paperButton = document.getElementById('buttonPaper');
 let scissorButton = document.getElementById('buttonScissor');
+let scoreBoard = document.getElementById('scores');
 
 rockButton.addEventListener('click', () =>{
     userChoice = 'rock';
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
-    console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+    gamePlayed += 1;
+    //console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+    scoreBoard.textContent = String(wins, loss, tie); //Needs work but this is a lead on how to update the runnign score of the game.
 });
 
 paperButton.addEventListener('click', () =>{
     userChoice = 'paper';
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
+    gamePlayed += 1;
     console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
 });
 
@@ -27,6 +31,7 @@ scissorButton.addEventListener('click', () =>{
     userChoice = 'scissors';
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
+    gamePlayed += 1;
     console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
 });
 
