@@ -16,7 +16,7 @@ rockButton.addEventListener('click', () =>{
     playRound(computerChoice, userChoice);
     gamePlayed += 1;
     //console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
-    scoreBoard.textContent = String(wins, loss, tie); //Needs work but this is a lead on how to update the runnign score of the game.
+    scoreBoard.textContent = `Wins: ${wins} Losses: ${loss} Ties: ${tie}`;
 });
 
 paperButton.addEventListener('click', () =>{
@@ -24,7 +24,7 @@ paperButton.addEventListener('click', () =>{
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
     gamePlayed += 1;
-    console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+    scoreBoard.textContent = `Wins: ${wins} Losses: ${loss} Ties: ${tie}`;
 });
 
 scissorButton.addEventListener('click', () =>{
@@ -32,7 +32,7 @@ scissorButton.addEventListener('click', () =>{
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
     gamePlayed += 1;
-    console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
+    scoreBoard.textContent = `Wins: ${wins} Losses: ${loss} Ties: ${tie}`;
 });
 
 function playRound(cI, uI){
