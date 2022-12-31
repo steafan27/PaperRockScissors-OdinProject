@@ -11,7 +11,9 @@ let scissorButton = document.getElementById('buttonScissor');
 let scoreBoard = document.getElementById('scores');
 let gameMessage = document.getElementById('message');
 
+
 rockButton.addEventListener('click', () =>{
+    endGameModal();
     userChoice = 'rock';
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
@@ -19,6 +21,7 @@ rockButton.addEventListener('click', () =>{
 });
 
 paperButton.addEventListener('click', () =>{
+    endGameModal();
     userChoice = 'paper';
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
@@ -26,10 +29,10 @@ paperButton.addEventListener('click', () =>{
 });
 
 scissorButton.addEventListener('click', () =>{
+    endGameModal();
     userChoice = 'scissors';
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
-
     scoreBoard.textContent = `Wins: ${wins} Losses: ${loss} Ties: ${tie}`;
 });
 
@@ -37,22 +40,46 @@ function playRound(cI, uI){
     const CHOICES = ["paper", "rock", "scissors"];
     switch(true){
         case CHOICES[cI] == "paper" && uI == "paper":
-            return tie += 1;
+            tie += 1;
+            gamePlayed += 1;
+            return [tie,gamePlayed];
         case CHOICES[cI] == "paper" && uI == "rock":
-            return loss += 1;
+            loss +=1;
+            gamePlayed += 1;
+            return [loss,gamePlayed];
         case CHOICES[cI] == "paper" && uI == "scissors":
-            return wins += 1;
+            wins += 1;
+            gamePlayed += 1;
+            return [wins,gamePlayed];
         case CHOICES[cI] == "rock" && uI == "paper":
-            return wins += 1;
+            wins += 1;
+            gamePlayed += 1;
+            return [wins,gamePlayed];
         case CHOICES[cI] == "rock" && uI == "rock":
-            return tie += 1;
+            tie += 1;
+            gamePlayed += 1;
+            return [tie,gamePlayed];
         case CHOICES[cI] == "rock" && uI == "scissors":
-            return loss += 1;
+            loss +=1;
+            gamePlayed += 1;
+            return [loss,gamePlayed];
         case CHOICES[cI] == "scissors" && uI == "paper":
-            return loss += 1;
+            loss +=1;
+            gamePlayed += 1;
+            return [loss,gamePlayed];
         case CHOICES[cI] == "scissors" && uI == "rock":
-            return wins += 1;
+            wins += 1;
+            gamePlayed += 1;
+            return [wins,gamePlayed];
         case CHOICES[cI] == "scissors" && uI == "scissors":
-            return tie += 1;
+            tie += 1;
+            gamePlayed += 1;
+            return [tie,gamePlayed];
+    }
+}
+
+function endGameModal(){
+    if(gamePlayed >= 4){
+        console.log("hello");
     }
 }
