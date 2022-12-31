@@ -15,7 +15,6 @@ rockButton.addEventListener('click', () =>{
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
     gamePlayed += 1;
-    //console.log("Wins", wins, "Loss", loss, "Ties", tie, "Rounds", gamePlayed);
     scoreBoard.textContent = `Wins: ${wins} Losses: ${loss} Ties: ${tie}`;
 });
 
