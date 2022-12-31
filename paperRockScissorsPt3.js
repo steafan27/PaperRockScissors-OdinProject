@@ -9,12 +9,12 @@ let rockButton = document.getElementById('buttonRock');
 let paperButton = document.getElementById('buttonPaper');
 let scissorButton = document.getElementById('buttonScissor');
 let scoreBoard = document.getElementById('scores');
+let gameMessage = document.getElementById('message');
 
 rockButton.addEventListener('click', () =>{
     userChoice = 'rock';
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
-    gamePlayed += 1;
     scoreBoard.textContent = `Wins: ${wins} Losses: ${loss} Ties: ${tie}`;
 });
 
@@ -22,7 +22,6 @@ paperButton.addEventListener('click', () =>{
     userChoice = 'paper';
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
-    gamePlayed += 1;
     scoreBoard.textContent = `Wins: ${wins} Losses: ${loss} Ties: ${tie}`;
 });
 
@@ -30,7 +29,7 @@ scissorButton.addEventListener('click', () =>{
     userChoice = 'scissors';
     computerChoice = Math.floor(Math.random() * 3);
     playRound(computerChoice, userChoice);
-    gamePlayed += 1;
+
     scoreBoard.textContent = `Wins: ${wins} Losses: ${loss} Ties: ${tie}`;
 });
 
